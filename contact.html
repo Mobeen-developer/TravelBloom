@@ -1,41 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Bloom</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="travel_recommendation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Contact</title>
 </head>
-<body background="/Assets/image_for_bora-bora">
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="travel_recommendation.html" >Travel<span>Bloom</span></a>
-          </div>
-                
-              </div>
-                    <ul class="nav__links" id="menu-btn"></ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><input type="text" id="search" placeholder="Search for recommendations..."></li>
-                    <button id="search-btn">Search</button>
-                    <button id="reset-btn">Reset</button>
-                    </ul>
-                </nav>
-            </header>
-        </nav>
-    </header>
-    <section id="contact">
-        
-        <h2>Contact Us</h2>
-        <form>
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
-    </section>
+<body>
+<div class="navbar">
+    <div class="navbar-items">
+        <div id="company"><i class="fa fa-suitcase" id = "logo-icon"></i> FramAir</div>
+    </div>
+    <div class="navbar-items">
+        <a href="index.html">Home</a>
+        <a href="./about.html">About Us</a>
+        <a href="./contact.html">Contact Us</a>
+    </div>
+    <div class="navbar-items">
+        <input type="text" placeholder="Search destinations..." id="searchDestination">
+        <button class="btn" id="btnSearch">Search</button>
+        <button class="btn" id="btnReset">Reset</button>
+    </div>
+</div>
+<div id="home">
+    <div class="social-media">
+        <div class="vertical-line">
+        </div>
+        <div class="social-media-item">
+            <i class="fa fa-twitter fa-2x social-media-btn"></i>
+            <i class="fa fa-facebook fa-2x social-media-btn"></i>
+            <i class="fa fa-instagram fa-2x social-media-btn"></i>
+            <i class="fa fa-youtube fa-2x social-media-btn"></i>
+        </div>
+    </div>
+    <div class="contact">
+        <h2 class="information-title">CONTACT US</h2>
+        <p>Stay in touch</p>
+    </div>
+    <div class="contact-form">
+        <label for="name">Name</label><br>
+        <input id="name" class="contact-input" type="text" placeholder="Enter your name"><br><br>
+        <label for="email">Email</label><br>
+        <input id="email" class="contact-input" type="text" placeholder="Enter your email"><br><br>
+        <label for="message">Message</label><br>
+        <textarea id="message" class="contact-input" placeholder="Email your message"></textarea><br><br>
+        <button class="btnBook">Submit</button>
+    </div>
+</div>
 </body>
-<script src="travel_recommendation.js"></script>
 </html>

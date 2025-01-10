@@ -1,345 +1,292 @@
-/* Basic CSS for the navigation bar */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-:root {
-    --primary-color: #0376c1;
-    --primary-color-dark: #002954;
-    --text-dark: #12110f;
-    --text-light: #6b7280;
-    --extra-light: #fbf7f6;
-    --white: #ffffff;
-    --max-width: 1200px;
-    --header-font: "Merriweather", serif;
-  }
-
-*{
+body, html {
+    font-family: "Roboto Light", Arial, sans-serif;
+    background-image: url('./travelRecommendation/Assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: auto;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    height: 100%;
 }
-nav {
-    background-color: #0eb8e7;
+
+.center
+{
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    color: white;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    margin: 30px;
+    text-decoration: none;
+}
+
+.navbar-items {
+    display: flex;
+    /*align-items: center;*/
+}
+
+#company {
+    float: left;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bold;
+    vertical-align: center;
+}
+
+.search-container {
+    float: right;
+    padding: 14px 16px;
+}
+
+#searchDestination {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.btn {
+    color: lightseagreen;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: white;
+}
+
+
+.btn:hover {
+    background-color: lightseagreen;
+    color: white;
+    cursor: pointer;
+}
+
+/*.btn {*/
+/*    color: white;*/
+/*    background-color: lightseagreen;*/
+/*    border: none;*/
+/*    border-radius: 5px;*/
+/*    padding: 10px;*/
+/*    margin: 25px;*/
+/*    font-size: 20px;*/
+/*    font-weight: bold;*/
+/*}*/
+
+#home {
+    display: flex;
+    min-height: 100vh;
+    min-width: 100vh;
+    height: 100%;
+    width: 100%;
+}
+
+.social-media {
+    display: block;
+    margin-left: 15px;
+    margin-top: 25px;
+}
+
+.vertical-line {
+    border-left: 2px solid white;
+    height: 300px;
+    margin: 15px 15px;
+}
+
+.social-media-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-size: 45px;
+    margin-top: 100px;
+    color: white;
+}
+
+.social-media-item {
+    display: flex;
+    float : left;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-media-btn {
+    color: white;
+    margin: 10px 0;
+}
+
+.information {
+    width: 400px;
+    color: white;
+    font-weight: bolder;
+    display: block;
+    margin: 25px 25px;
+}
+
+.information-title {
+    font-weight: bolder;
+    font-size: 60px;
+}
+
+.information-body{
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 50px;
+}
+
+.btnBook{
+    color: white;
+    background-color: lightseagreen;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 30px;
+    margin: auto;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btnBook:hover {
+    color: lightseagreen;
+    background-color: white;
+}
+
+#result{
+    margin-top: 25px;
+    margin-left: 25px;
+    width: 450px;
+    height: 100px;
+}
+
+#result img {
+    width: 450px;
+    height: 250px;
+    border-radius: 10px 10px 0 0;
+}
+
+#result h2 {
+    margin: 20px;
+}
+
+#result p {
+    margin: 20px;
+    color: rgb(158, 147, 147);
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.btnVisit {
+    margin: 10px 20px;
+    background-color: lightseagreen;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: none;
+    font-size: medium;
+}
+
+.search-result {
+    margin-bottom: 25px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.contact {
+    color: white;
+    font-weight: bolder;
+    padding: 20px;
+    display: block;
+    margin: 100px 25px;
+}
+
+.contact p {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.contact-form {
+    width: 450px;
+    height: 500px;
+    background-color: rgba(41, 47, 46, 0.3);
+    margin: 200px 50px;
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+}
+
+.contact-input {
+    width: 450px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+#message {
+    height: 60px;
+}
+
+.contact-input::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.about-us {
+    color: white;
+    font-weight: bolder;
+    padding: 20px;
+    display: block;
+    margin: 10px 100px;
+}
+
+.about-us-desc{
+    font-size: 24px;
+    font-weight: normal;
+    background-color: rgba(41, 47, 46, 0.3);
+    padding: 20px;
+}
+
+.team-details{
+    color: white;
+    font-weight: bolder;
     padding: 20px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    list-style-type: none;
-    
-  }
-  
-  nav ul {
-    list-style-type: none;
-    /* padding: 0; */
-  }
-  nav ul li {
-    display: inline;
-    margin-right: 10px;
-    list-style-type: none;
-    
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-  }
-  
-  /* Basic CSS for the form elements */
-  body {
-    font-family: Arial, sans-serif;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    /* margin: 20px; */
-
-  }
-  
-  h1 {
-    margin-bottom: 20px;
-  }
-  
-  div {
-    margin-bottom: 10px;
-  }
-  
-  label {
-    display: inline-block;
-    width: 100px;
-  }
-  
-  input[type="text"],
-  input[type="number"],
-  select {
-    width: 200px;
-    padding: 5px;
-  }
-  
-  button {
-    padding: 7px 15px;
-    background-color: #2950ba;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-end-end-radius: 3rem;
-  }
-  
-  button:hover {
-    background-color: #18d0f1;
-  }
-  /* Contact Section Styles */
-  /* Home Section Styles */
-#home {
-    background: url('your-background-image.jpg') no-repeat center center/cover; /* Fullscreen background image */
-    height: 100vh; /* Full viewport height */
-    display: flex; /* Flexbox for centering content */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    text-align: center; /* Center-align text */
-    color: #ffffff; /* White text for contrast */
-    padding: 20px; /* Add some padding for smaller screens */
+    margin: 10px 100px;
 }
 
-#home h1 {
-    font-size: 3rem; /* Large headline size */
-    font-weight: bold; /* Bold for emphasis */
-    text-transform: uppercase; /* Make text uppercase */
-    margin-bottom: 20px; /* Add space below the heading */
-    letter-spacing: 2px; /* Add spacing between letters */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+.team-details-desc {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 100px;
 }
 
-#home p {
-    font-size: 1.5rem; /* Larger paragraph text */
-    line-height: 1.8; /* Comfortable line spacing */
-    max-width: 800px; /* Limit paragraph width */
-    margin: 0 auto 30px auto; /* Center and add spacing below */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow for readability */
+#team-title {
+    font-weight: bolder;
+    font-size: 60px;
 }
 
-#home .btn-container {
-    display: flex; /* Flexbox for buttons */
-    gap: 20px; /* Space between buttons */
-    margin-top: 20px; /* Add spacing above the buttons */
+.team-card{
+    background-color: rgba(41, 47, 46, 0.3);
+    width: 300px;
+    margin: 20px;
+    padding: 30px;
+    border-radius: 10px;
+
 }
 
-#home .btn {
-    display: inline-block; /* Inline button style */
-    padding: 12px 25px; /* Button padding */
-    font-size: 1.2rem; /* Button text size */
-    font-weight: bold; /* Bold button text */
-    color: #ffffff; /* White text */
-    background-color: #007bff; /* Primary blue color */
-    border: none; /* Remove borders */
-    border-radius: 5px; /* Rounded corners */
-    text-transform: uppercase; /* Uppercase text */
-    text-decoration: none; /* Remove underline */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Hover effect */
+.team-card i {
+    font-size: 40px;
 }
 
-#home .btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: scale(1.05); /* Slight scaling effect */
+.team-card p {
+    font-size: 20px;
+    font-weight: normal;
 }
-
-#home .social-icons {
-    display: flex; /* Flexbox for social media icons */
-    justify-content: center; /* Center the icons */
-    gap: 15px; /* Space between icons */
-    margin-top: 30px; /* Add space above icons */
-}
-
-#home .social-icons a {
-    color: #ffffff; /* White icons */
-    font-size: 1.8rem; /* Icon size */
-    transition: color 0.3s ease, transform 0.3s ease; /* Hover effect */
-}
-
-#home .social-icons a:hover {
-    color: #007bff; /* Change color on hover */
-    transform: scale(1.2); /* Slight scaling on hover */
-}
-
-@media (max-width: 768px) {
-    #home h1 {
-        font-size: 2.5rem; /* Adjust headline size for smaller screens */
-    }
-
-    #home p {
-        font-size: 1.2rem; /* Adjust paragraph size */
-    }
-
-    #home .btn {
-        font-size: 1rem; /* Adjust button text size */
-        padding: 10px 20px; /* Adjust button padding */
-    }
-
-    #home .social-icons a {
-        font-size: 1.5rem; /* Adjust icon size */
-    }
-}
-
-#contact {
-    background-color: #f9f9f9; /* Light background for contrast */
-    padding: 50px 20px; /* Spacing around the section */
-    text-align: center; /* Center-align text */
-    border-top: 2px solid #ddd; /* Subtle border for separation */
-}
-
-#contact h2 {
-    font-size: 2rem; /* Headline size */
-    color: #333; /* Dark text for good readability */
-    margin-bottom: 20px; /* Space below the heading */
-    text-transform: uppercase; /* Make the heading uppercase */
-}
-
-#contact form {
-    max-width: 600px; /* Limit form width */
-    margin: 0 auto; /* Center the form */
-    background-image:url(Assets/image_for_melbourne.jpg) ; /* White form background */
-    padding: 30px; /* Space inside the form */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    border-radius: 8px; /* Rounded corners */
-    border: 1px solid #ddd; /* Light border */
-}
-
-#contact input[type="text"],
-#contact input[type="email"],
-#contact textarea {
-    width: 100%; /* Full-width inputs */
-    padding: 10px; /* Inner padding for inputs */
-    margin-bottom: 15px; /* Space between inputs */
-    border: 1px solid #ccc; /* Light border */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 1rem; /* Readable font size */
-    background-color: #fdfdfd; /* Slightly off-white */
-}
-
-#contact input[type="text"]:focus,
-#contact input[type="email"]:focus,
-#contact textarea:focus {
-    outline: none; /* Remove default outline */
-    border-color: #007bff; /* Highlight border color */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle glow */
-}
-
-#contact textarea {
-    height: 150px; /* Set height for textarea */
-    resize: vertical; /* Allow vertical resizing only */
-}
-
-#contact button {
-    background-color: #007bff; /* Primary blue button */
-    color: #fff; /* White text */
-    border: none; /* No border */
-    padding: 12px 20px; /* Button size */
-    font-size: 1rem; /* Button text size */
-    cursor: pointer; /* Pointer cursor on hover */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-}
-
-#contact button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
-
-@media (max-width: 768px) {
-    #contact form {
-        padding: 20px; /* Reduce padding for smaller screens */
-    }
-
-    #contact h2 {
-        font-size: 1.5rem; /* Adjust heading size */
-    }
-}
-/* About Section Styles */
-#about {
-    background-color: #ffffff; /* White background for simplicity */
-    padding: 60px 20px; /* Add spacing around the section */
-    text-align: center; /* Center-align text content */
-    border-bottom: 2px solid #ddd; /* Subtle border for separation */
-}
-
-#about h2 {
-    font-size: 2.5rem; /* Large headline size */
-    color: #333; /* Dark text for readability */
-    margin-bottom: 20px; /* Space below the heading */
-    text-transform: uppercase; /* Uppercase for emphasis */
-}
-
-#about p {
-    font-size: 1.1rem; /* Slightly larger text for easy reading */
-    line-height: 1.8; /* Comfortable line spacing */
-    color: #555; /* Medium-gray text for contrast */
-    max-width: 800px; /* Limit paragraph width */
-    margin: 0 auto 40px auto; /* Center text and add space below */
-}
-
-#about .team {
-    display: flex; /* Use flexbox for layout */
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    justify-content: center; /* Center team members */
-    gap: 30px; /* Space between items */
-    margin-top: 40px; /* Add spacing above the team section */
-}
-
-#about .team-member {
-    background-color: #f9f9f9; /* Light background for cards */
-    padding: 20px; /* Inner spacing */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    text-align: center; /* Center-align content */
-    width: 250px; /* Fixed width for team cards */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
-}
-
-#about .team-member:hover {
-    transform: translateY(-5px); /* Lift on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
-}
-
-#about .team-member img {
-    width: 100px; /* Team member image size */
-    height: 100px; /* Keep images square */
-    border-radius: 50%; /* Make images circular */
-    margin-bottom: 15px; /* Space below the image */
-    border: 3px solid #007bff; /* Add a border to highlight images */
-}
-
-#about .team-member h3 {
-    font-size: 1.2rem; /* Name font size */
-    color: #333; /* Dark text */
-    margin: 10px 0 5px 0; /* Space around name */
-}
-
-#about .team-member p {
-    font-size: 1rem; /* Role font size */
-    color: #777; /* Lighter gray for roles */
-    margin: 0; /* Remove default margin */
-}
-
-@media (max-width: 768px) {
-    #about h2 {
-        font-size: 2rem; /* Adjust headline size for smaller screens */
-    }
-
-    #about p {
-        font-size: 1rem; /* Adjust paragraph size */
-    }
-
-    #about .team-member {
-        width: 100%; /* Make cards full width on smaller screens */
-    }
-}
-.logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--primary-color);
-  }
-  .transparent-section {
-
-    opacity: 0.5;
-  
-  }
-
-
-  
-

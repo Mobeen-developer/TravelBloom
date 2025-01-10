@@ -2,46 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Bloom</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="travel_recommendation.css">
+    <title>About</title>
 </head>
-<body background="Assets/image_for_taj-mahal.jpg">
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="travel_recommendation.html" >Travel<span>Bloom</span></a>
-          </div>
+<body>
+<div class="navbar">
+    <div class="navbar-items">
+        <div id="company"><i class="fa fa-suitcase" id = "logo-icon"></i> FramAir</div>
+    </div>
+    <div class="navbar-items">
+        <a href="index.html">Home</a>
+        <a href="./about.html">About Us</a>
+        <a href="./contact.html">Contact Us</a>
+    </div>
+    <div class="navbar-items">
+        <input type="text" placeholder="Search destinations..." id="searchDestination">
+        <button class="btn" id="btnSearch">Search</button>
+        <button class="btn" id="btnReset">Reset</button>
+    </div>
+</div>
+<div id="home">
+    <div class="social-media">
+        <div class="vertical-line">
+        </div>
+        <div class="social-media-item">
+            <i class="fa fa-twitter fa-2x social-media-btn"></i>
+            <i class="fa fa-facebook fa-2x social-media-btn"></i>
+            <i class="fa fa-instagram fa-2x social-media-btn"></i>
+            <i class="fa fa-youtube fa-2x social-media-btn"></i>
+        </div>
+    </div>
+    <div class="about-us">
+        <h1 id="intro-title">ABOUT US</h1>
+        <div class="about-us-desc">
+            Welcome to FramAir,<br>
+            your ultimate travel companion! We are a team of passionate travel enthusiasts dedicated to helping you discover the best destinations around the world.<br>
+            Our mission is to provide personalized travel recommendations that cater to your unique preferences and interests.<br>
+            At FramAir, we believe that travel is more than just visiting new places; it's about creating unforgettable experiences and memories.<br>
+            </b> Our expert team curates the best travel guides, tips, and itineraries to ensure that your journey is seamless and enjoyable.<br>
+            Our Values:<br>
+            <ul>
+                <li>Customer Satisfaction: Your happiness is our top priority. We strive to exceed your expectations with every recommendation.</li>
+                <li>Integrity: We provide honest and transparent information to help you make informed travel decisions.</li>
+                <li>Innovation: We continuously improve our services to offer you the latest and most relevant travel insights.</li>
+                <li>Teamwork: Our collaborative approach ensures that we deliver the best possible service to our customers.</li>
+            </ul>
+        </div>
+        <div class="team-details">
+            <h1 id="team-title">Our<br>Team</h1>
+            <div class="team-details-desc">
+                <div class="team-card">
+                    <i class='fa fa-user-o'></i>
+                    <h2>John Doe</h2>
+                    <p>
+                        John is our lead travel consultant with over 10 years of experience in the travel industry. He specializes in creating personalized travel itineraries.
+                    </p>
+                    <button class="btnBook">Travel Consultant</button>
                 </div>
-                
-              </div>
-                    <ul class="nav__links" id="menu-btn"></ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><input type="text" id="search" placeholder="Search for recommendations..."></li>
-                    <button id="search-btn">Search</button>
-                    <button id="reset-btn">Reset</button>
-                    </ul>
-                </nav>
-            </header>
-        </nav>
-    </header>
-
-    <section id="about" class="transparent-section">
-        <h2>About Us</h2>
-        <p>We are passionate about connecting you with the world's most amazing destinations.</p>
-        <div id="team">
-            <div>
-                <h3>Jane Doe</h3>
-                <p>Founder & CEO</p>
-            </div>
-            <div>
-                <h3>John Smith</h3>
-                <p>Travel Expert</p>
+                <div class="team-card">
+                    <i class='fa fa-user-o'></i>
+                    <h2>Jane Smith</h2>
+                    <p>
+                        Jane is our content manager, responsible for curating and managing all travel-related content. She ensures that our guides and tips are up-to-date and informative.
+                    </p>
+                    <button class="btnBook">Content Manager</button>
+                </div>
+                <div class="team-card">
+                    <i class='fa fa-user-o'></i>
+                    <h2>Emily Johnson</h2>
+                    <p>
+                        Emily is our customer service specialist, dedicated to providing exceptional support to our clients. She is always ready to assist with any travel-related inquiries.
+                    </p>
+                    <button class="btnBook">Customer Service</button>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</div>
 </body>
-<script src="travel_recommendation.js"></script>
 </html>

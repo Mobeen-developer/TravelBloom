@@ -3,58 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Bloom</title>
     <link rel="stylesheet" href="travel_recommendation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Travel Bloom</title>
 </head>
-<body background="Assets/image_for_taj-mahal.jpg">
-    <header>
-        <nav>
-            <div class="logo">
-                  <a href="index.html" >Travel<span>Bloom</span></a>
+<body>
+    <div class="navbar">
+        <div class="navbar-items">
+            <div id="company"><i class="fa fa-suitcase" id = "logo-icon"></i> TravelBloom</div>
+        </div>
+        <div class="navbar-items">
+            <a href="./index.html" class="center">Home</a>
+            <a href="./about.html" class="center">About Us</a>
+            <a href="./contact.html" class="center">Contact Us</a>
+        </div>
+        <div class="navbar-items">
+            <input type="text" placeholder="Search destinations..." id="searchDestination">
+            <button class="btn" id="btnSearch">Search</button>
+            <button class="btn" id="btnReset">Reset</button>
+        </div>
+    </div>
+    <div id="home">
+        <div class="social-media">
+            <div class="vertical-line">
             </div>
-                    <ul class="nav__links" id="menu-btn"></ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><input type="text" id="search" placeholder="Search for recommendations..."></li>
-                    <button id="search-btn">Search</button>
-                    <button id="reset-btn">Reset</button>
-                    </ul>
-              </div>
-                </nav>
-            </header>
-        </nav>
-    </header>
-    <section id="home" style="background-image: url(travelRecommendation/Assets/image_for_tokyo.jpg);">
-        <h1>Welcome to TravelBloom</h1>
-        <p>Your gateway to the best travel recommendations worldwide.</p>
-        <button id="bookNow">Book Now</button>
-    </section>
-    <section id="contact" background="/image_for_tokyo">
-        <h2>Contact Us</h2>
-        <form>
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
-    </section>
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We are passionate about connecting you with the world's most amazing destinations.</p>
-        <div id="team">
-            <div>
-                <h3>Jane Doe</h3>
-                <p>Founder & CEO</p>
-            </div>
-            <div>
-                <h3>John Smith</h3>
-                <p>Travel Expert</p>
+            <div class="social-media-item">
+                <i class="fa fa-twitter fa-2x social-media-btn"></i>
+                <i class="fa fa-facebook fa-2x social-media-btn"></i>
+                <i class="fa fa-instagram fa-2x social-media-btn"></i>
+                <i class="fa fa-youtube fa-2x social-media-btn"></i>
             </div>
         </div>
-    </section>
-    
-    
+        <div class="information">
+            <div class="information-title">
+                    Explore<br>
+                    Dream<br>
+                    Destination<br>
+            </div>
+            <div class="information-body">
+                <p>
+                    It encourages exploration of unfamiliar<br> territories, embracing diverse cultures and<br>
+                    landscapes, while pursuing the desired<br> destination that captivates the heart and<br>
+                    ignites a sense of wonder.
+                </p>
+                <div class="center">
+                    <button class="btnBook">Book now</button>
+                </div>
+            </div>
+
+        </div>
+        <div id="result"></div>
+        <div id="about"></div>
+        <div id="contact"></div>
+    </div>
+    <script src="./travel_recommendation.js"></script>
 </body>
-<script src="travel_recommendation.js"></script>
 </html>
