@@ -1,188 +1,74 @@
-const menuBtn = document.getElementById("menu-btn");
-const navLinks = document.getElementById("nav-links");
-const menuBtnIcon = menuBtn.querySelector("i");
+const report = document.getElementById("report");
+const btnSearch = document.getElementById('btnSearch');
+const clearAllBtn = document.getElementById("clearAllBtn");
 
-menuBtn.addEventListener("click", (e) => {
-  navLinks.classList.toggle("open");
 
-  const isOpen = navLinks.classList.contains("open");
-  menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
-});
+function searchCondition() {
+    const input = document.getElementById('destinationInput').value.toLowerCase();
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = '';
 
-navLinks.addEventListener("click", (e) => {
-  navLinks.classList.remove("open");
-  menuBtnIcon.setAttribute("class", "ri-menu-line");
-});
+    fetch('./travel_recommendation_api.json')
+        .then(response => response.json())
 
-const scrollRevealOption = {
-  distance: "50px",
-  origin: "bottom",
-  duration: 1000,
-};
+        .then(data => {
+            const country = data.countries.find(item => item.name.toLowerCase() === input);
 
-ScrollReveal().reveal(".header__container h1", {
-  ...scrollRevealOption,
-});
-ScrollReveal().reveal(".header__container p", {
-  ...scrollRevealOption,
-  delay: 500,
-});
-ScrollReveal().reveal(".header__container form", {
-  ...scrollRevealOption,
-  delay: 1000,
-});
+            //array of words for temple search
+            const templeArray = ["temple", "temples"];
+            const temple = templeArray.some(word => word.toLowerCase() === input.toLowerCase());
+                       
+    
+            //array of words for beach search
+            const beachArray = ["beach", "beaches"];
+            const beach = beachArray.some(word => word.toLowerCase() === input.toLowerCase());
 
-ScrollReveal().reveal(".feature__card", {
-  duration: 1000,
-  interval: 500,
-});
+            //search for country
+            if (country) {
+                    for (let i = 0; i <= country.cities.length-1; i++) {
+                    resultDiv.innerHTML += `<h2>${country.cities[i].name}</h2>`;
+                    resultDiv.innerHTML += `<img src="${country.cities[i].imageUrl}" alt="hjh">`;
+                    resultDiv.innerHTML += `<p><strong>Description:</strong> ${country.cities[i].description}</p>`;
 
-ScrollReveal().reveal(".destination__card", {
-  ...scrollRevealOption,
-  interval: 500,
-});
+                }
+            }
 
-ScrollReveal().reveal(".package__card", {
-  ...scrollRevealOption,
-  interval: 500,
-});
+            //search for temple
+            else if (temple) {
+              console.log(data.temples.length);              
+                for (let j = 0; j <= data.temples.length - 1; j++) {
+                   resultDiv.innerHTML += `<h2>${data.temples[j].name}</h2>`;
+                   resultDiv.innerHTML += `<img src="${data.temples[j].imageUrl}" alt="hjh">`;
+                   resultDiv.innerHTML += `<p><strong>Description:</strong> ${data.temples[j].description}</p>`;
+                }
+            }
 
-const swiper = new Swiper(".swiper", {
-  slidesPerView: "auto",
-  spaceBetween: 20,
-  pagination: {
-    el: ".swiper-pagination",
-  },
-});
-async function getData() {
-    const url = "travelRecommendation/travel_recommendation_api.json";
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`Response status: ${response.status}`);
-      }
-  
-      const json = await response.json();
-      console.log(json);
-    } catch (error) {
-      console.error(error.message);
-    }
-  }
-  
-  const options = { timeZone: 'Asia/Kolkata', hour12: true, hour: '2-digit', minute: '2-digit' };
-const indiaTime = new Date().toLocaleTimeString('en-US', options);
-console.log("Current time in India:", indiaTime);
+            //search for beach
+            else if (beach) {
+                console.log(data.beaches.length);
+                for (let z = 0; z <= data.beaches.length - 1; z++) {
+                    resultDiv.innerHTML += `<h2>${data.beaches[z].name}</h2>`;
+                    resultDiv.innerHTML += `<img src="${data.beaches[z].imageUrl}" alt="hjh">`;
+                    resultDiv.innerHTML += `<p><strong>Description:</strong> ${data.beaches[z].description}</p>`;
+                }
+            }
 
-document.getElementById("reset-btn").addEventListener("click", function () {
-    document.getElementById("search").value = "";
-    document.getElementById("results").innerHTML = "";
-});
-// Sample JSON data (replace with a fetch call if using an external JSON file)
-const data = {
-    countries: [
-      {
-        id: 1,
-        name: "Australia",
-        cities: [
-          { name: "Sydney, Australia", imageUrl: "image_for_sydney.jpg", description: "A vibrant city..." },
-          { name: "Melbourne, Australia", imageUrl: "image_for_melbourne.jpg", description: "A cultural hub..." },
-        ],
-      },
-      {
-        id: 2,
-        name: "Japan",
-        cities: [
-          { name: "Tokyo, Japan", imageUrl: "image_for_tokyo.jpg", description: "A bustling metropolis..." },
-          { name: "Kyoto, Japan", imageUrl: "image_for_Japan.jpg", description: "Known for its historic temples..." },
-        ],
-      },
-    ],
-    temples: [
-      { id: 1, name: "Angkor Wat, Cambodia", imageUrl: "image_for_angkor-wat.jpg", description: "A UNESCO site..." },
-      { id: 2, name: "Taj Mahal, India", imageUrl: "image_for_taj-mahal.jpg", description: "An iconic symbol of love..." },
-    ],
-    beaches: [
-      { id: 1, name: "Bora Bora, French Polynesia", imageUrl: "image_for_bora-bora.jpg", description: "An island known for..." },
-      { id: 2, name: "Copacabana Beach, Brazil", imageUrl: "image_for_copacabana.jpg", description: "A famous beach..." },
-    ],
-  };
-  
-  // Function to normalize and search
-  function searchKeyword(keyword) {
-    const normalizedKeyword = keyword.toLowerCase();
-    const results = [];
-  
-    // Search in beaches
-    data.beaches.forEach(beach => {
-      if (beach.name.toLowerCase().includes(normalizedKeyword)) {
-        results.push(beach);
-      }
-    });
-  
-    // Search in temples
-    data.temples.forEach(temple => {
-      if (temple.name.toLowerCase().includes(normalizedKeyword)) {
-        results.push(temple);
-      }
-    });
-  
-    // Search in countries and cities
-    data.countries.forEach(country => {
-      if (country.name.toLowerCase().includes(normalizedKeyword)) {
-        results.push(country);
-      }
-      country.cities.forEach(city => {
-        if (city.name.toLowerCase().includes(normalizedKeyword)) {
-          results.push(city);
-        }
-      });
-    });
-  
-    return results;
-  }
-  
-  // Event listener for search
-  document.getElementById("search-button").addEventListener("click", () => {
-    const searchField = document.getElementById("search-field");
-    const query = searchField.value.trim();
-  
-    if (!query) {
-      alert("Please enter a keyword to search.");
-      return;
-    }
-  
-    const results = searchKeyword(query);
-    displayResults(results);
-  });
-  
-  // Function to display results
-  function displayResults(results) {
-    const resultsDiv = document.getElementById("results");
-    resultsDiv.innerHTML = ""; // Clear previous results
-  
-    if (results.length === 0) {
-      resultsDiv.innerHTML = "<p>No results found.</p>";
-      return;
-    }
-  
-    results.forEach(item => {
-      const card = document.createElement("div");
-      card.className = "result-card";
-  
-      const image = document.createElement("img");
-      image.src = `./${item.imageUrl}`;
-      image.alt = item.name;
-  
-      const title = document.createElement("h3");
-      title.textContent = item.name;
-  
-      const description = document.createElement("p");
-      description.textContent = item.description;
-  
-      card.appendChild(image);
-      card.appendChild(title);
-      card.appendChild(description);
-      resultsDiv.appendChild(card);
-    });
-  }
-  
+            else {
+                resultDiv.innerHTML = 'Destination not found.';
+                
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            resultDiv.innerHTML = 'An error occurred while fetching data.';
+        });
+}
+btnSearch.addEventListener('click', searchCondition);
+
+function clearAllTasks() {
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = '';
+    input = '';
+
+}
+clearAllBtn.addEventListener("click", clearAllTasks);
